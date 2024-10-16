@@ -13,12 +13,12 @@ class ChatGroup(models.Model):
 
 class GroupMessage(models.Model):
     group = models.ForeignKey(ChatGroup, on_delete=models.CASCADE, related_name='chat_messages')
-    auther=models.ForeignKey(User,on_delete=models.CASCADE)
+    author=models.ForeignKey(User,on_delete=models.CASCADE)
     body=models.CharField(max_length=300)
     created = models.DateTimeField(auto_now_add=True)
 
     def  __str__(self):
-        return f'{self.auther.username} : {self.body}'
+        return f'{self.author.username} : {self.body}'
 
     class META:
-        ordering = ('-created',)  # newest messages first
+        ordering = ('-created')  # newest messages first
