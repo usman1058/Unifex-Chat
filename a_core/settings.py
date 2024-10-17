@@ -92,7 +92,7 @@ TEMPLATES = [
 ASGI_APPLICATION = 'a_core.asgi.application'
 
 
-CHANNRL_LAYERS={
+CHANNEL_LAYERS={
     'default':{
         'BACKEND': 'channels.layers.InMemoryChannelLayer'
     }
